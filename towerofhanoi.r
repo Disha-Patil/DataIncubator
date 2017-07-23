@@ -57,7 +57,7 @@ hanoi.move<-function(stacks,n,m)
     for(t in 1:moves)
       {
         valid.moves<-hanoi.move(stacks,n,m)
-        select.move<-sample(1:length(valid),1)
-        print(select.move)
+        select.move<-sample(1:length(valid.moves),1)
+        print(select.move);print(valid.moves)
       } 
   }
