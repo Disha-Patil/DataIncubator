@@ -15,17 +15,28 @@ hanoi.move<-function(stacks,moves,n,m)
     first<-sapply(stacks,"[[", 1)
     valid<-vector("list");loop=1
       for(i in 1:m){
-        if(i==1){if(is.null(first[[i+1]]) | first[[i]]<first[[i+1]]){
-        valid[[loop]]<-c(i,i+1); loop=loop+1}}
+        if(i==1){
+          if(is.null(first[[i+1]])){
+              valid[[loop]]<-c(i,i+1); loop=loop+1}
+          else if(first[[i]]<first[[i+1]]){
+              valid[[loop]]<-c(i,i+1); loop=loop+1}
+        }
         
-        if(is.null(first[[i+1]]) | first[[i]]<first[[i+1]]){
-        valid[[loop]]<-c(i,i+1); loop=loop+1}
+              
+        if(is.null(first[[i+1]])){
+              valid[[loop]]<-c(i,i+1); loop=loop+1}
+          else if(first[[i]]<first[[i+1]]){
+              valid[[loop]]<-c(i,i+1); loop=loop+1}
         
         if(is.null(first[[i-1]]) | first[[i]]<first[[i-1]]){
         valid[[loop]]<-c(i,i-1); loop=loop+1}
         
-        if(i==m){if(is.null(first[[i-1]]) | first[[i]]<first[[i-1]]){
-        valid[[loop]]<-c(i,i-1); loop=loop+1}}
+        if(i==m){
+          if(is.null(first[[i-1]])){
+              valid[[loop]]<-c(i,i-1); loop=loop+1}
+          else if(first[[i]]<first[[i-1]]){
+              valid[[loop]]<-c(i,i-1); loop=loop+1}
+        }
         
       }
     
