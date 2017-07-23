@@ -99,7 +99,8 @@ hanoi.move<-function(stacks,n,m)
 
   
   #set conditions
-  N=3;M=3;T=16
+  #N=3;M=3;T=16
+  N=3;M=3;T=256
   #center of mass vector
   CoM<-c()
   
