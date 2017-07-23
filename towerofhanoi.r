@@ -29,7 +29,9 @@ hanoi.move<-function(stacks,moves,n,m)
                                     else if(first[[i]]<first[[i-1]]){
                                         valid[[loop]]<-c(i,i-1); loop=loop+1}
                             }
-                            else {      
+                            else {
+                                  if(is.null(first[[i]])){break}
+                                  
                                   if(is.null(first[[i+1]])){
                                         valid[[loop]]<-c(i,i+1); loop=loop+1}
                                   else if(first[[i]]<first[[i+1]]){
