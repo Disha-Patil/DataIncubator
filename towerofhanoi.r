@@ -8,7 +8,7 @@ hanoi<-function(n,m)
   return(stacks)
 }
 
-hanoi.move<-function(stacks,moves=1,n,m)
+hanoi.move<-function(stacks,n,m)
 {
   #for(t in 1:moves){
     #print(t)
@@ -51,3 +51,13 @@ hanoi.move<-function(stacks,moves=1,n,m)
     return(valid)
   #}
 }
+  
+  hanoi.all.moves<-function(stacks,moves,n,m)
+  {
+    for(t in 1:moves)
+      {
+        valid.moves<-hanoi.move(stacks,n,m)
+        select.move<-sample(1:length(valid),1)
+        print(select.move)
+      } 
+  }
