@@ -16,7 +16,7 @@ hanoi.move<-function(stacks,moves,n,m)
         first<-sapply(stacks,"[[", 1)
         valid<-vector("list");loop=1
                   for(i in 1:m){
-                    print(i)
+                    print(i);print(first)
                             if(i==1){
                               if(is.null(first[[i+1]])){
                                   valid[[loop]]<-c(i,i+1); loop=loop+1}
