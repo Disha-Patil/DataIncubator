@@ -8,7 +8,7 @@ hanoi<-function(n,m)
   return(stacks)
 }
 
-hanoi.move<-function(stacks,moves)
+hanoi.move<-function(stacks,moves,n,m)
 {
   for(t in 1:moves){
   #first elements only in each stack
